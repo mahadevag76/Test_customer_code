@@ -19,8 +19,10 @@ class my_sample_test(BaseClass):
     @BaseClass.test(tags=[["sanity_tc1"]])
     def test_case_1(self):
         self.logger.info("print from TestCase1")
-        subprocess.Popen('make', shell=True)
-        subprocess.Popen('make clean', shell=True)
+        print(subprocess.Popen('pwd', shell=True))
+        print(subprocess.Popen('cd ../../customer_code; ls', shell=True))
+        subprocess.Popen('cd ../../customer_code; make', shell=True)
+        subprocess.Popen('cd ../../customer_code; makemake clean', shell=True)
     
         sleep(0.25)
         return (True)
