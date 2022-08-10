@@ -8,7 +8,7 @@ def argparse_func():
     args = parser.parse_args()
 
     if args.user_name:
-        print("------------------------------------------------")
+        print("------------------------------------------")
         print("Hello!!! Mr.% s nice to meeet you" % args.user_name.upper())
         a = random.randint(0,10)
 
