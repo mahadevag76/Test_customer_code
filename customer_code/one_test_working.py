@@ -19,13 +19,12 @@ class my_sample_test(BaseClass):
     @BaseClass.test(tags=[["sanity_tc1"]])
     def test_case_1(self):
         self.logger.info("print from TestCase1")
-        print(subprocess.Popen('pwd', shell=True))
-        print(subprocess.Popen('cd ../../customer_code; ls', shell=True))
+        self.logger.info("-----------------")
         subprocess.Popen('cd ../../customer_code; make', shell=True)
-        subprocess.Popen('cd ../../customer_code; makemake clean', shell=True)
+        subprocess.Popen('cd ../../customer_code; make clean', shell=True)
     
         sleep(0.25)
         return (True)
     @BaseClass.teardown
     def my_teardown(self):
-        self.logger.infot("from teardown")
+        self.logger.info("from teardown")
